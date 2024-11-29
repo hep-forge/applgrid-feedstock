@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-CFLAGS="-lm -lmvec -lgfortran" FFLAGS="-std=legacy" ./configure --prefix=${PREFIX}
+FFLAGS="-std=legacy" ./configure --prefix=${PREFIX}
 make clean
 
 make -j$(nproc)
