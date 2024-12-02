@@ -37,6 +37,11 @@ requirements:
     - root
     - lhapdf>=6
 
+test:
+  commands:
+    - $PREFIX/bin/applgrid-convert
+    - applgrid-convert
+
 about:
   home: "https://applgrid.hepforge.org"
   license: "GPL-3.0"
