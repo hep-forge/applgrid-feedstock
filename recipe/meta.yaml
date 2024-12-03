@@ -39,7 +39,7 @@ requirements:
 
 test:
   commands:
-    - "Running.. $(which applgrid-convert)"
+    - echo "Running.. $(which applgrid-convert)"
     - applgrid-convert
 
 about:
