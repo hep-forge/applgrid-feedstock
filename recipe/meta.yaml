@@ -39,8 +39,7 @@ requirements:
 
 test:
   commands:
-    - which $PREFIX/bin/applgrid-convert
-    - which applgrid-convert
+    - "Running.. $(which applgrid-convert)"
     - applgrid-convert
 
 about:
