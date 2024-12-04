@@ -37,13 +37,13 @@ requirements:
     - hoppet
     - lhapdf>=6
     - zlib
-#    - root
+    - root
 
   run:
     - hoppet
     - lhapdf>=6
     - zlib
-#    - root
+    - root
 
 test:
   commands:
