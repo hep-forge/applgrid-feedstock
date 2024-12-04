@@ -1,0 +1,34 @@
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 1fed926..a0d3ae8 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -63,9 +63,9 @@ else
+   LHAPDFCFLAGS = 
+ endif
+ 
+-AM_CXXFLAGS = $(ROOTARCH) -O3 -DDATADIR=\"@datadir@/$(PACKAGE)\" -Wall -Wextra -fPIC  -I. -I.. -I$(srcdir) $(LHAPDFCXXFLAGS) $(ROOTCFLAGS)  $(HOPPETCFLAGS) -fPIC
++AM_CXXFLAGS = $(ROOTARCH) -O2 -DDATADIR=\"@datadir@/$(PACKAGE)\" -Wall -Wextra -fPIC  -I. -I.. -I$(srcdir) $(LHAPDFCXXFLAGS) $(ROOTCFLAGS)  $(HOPPETCFLAGS) -fPIC
+ 
+-AM_LDFLAGS = $(ROOTARCH) -O3  $(ROOTLIBS) $(FCLIBS) $(HOPPETLIBS) $(FRTLLIB)  
++AM_LDFLAGS = $(ROOTARCH) -O2  $(ROOTLIBS) $(FCLIBS) $(HOPPETLIBS) $(FRTLLIB)  
+ 
+ 
+ bin_PROGRAMS = applgrid-combine applgrid-convert
+diff --git a/src/Makefile.in b/src/Makefile.in
+index 8560b8c..d953c1a 100644
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -449,8 +449,8 @@ top_srcdir = @top_srcdir@
+ @USE_FRTLSO_TRUE@FRTLIB = $(shell gfortran -print-file-name=libgfortran.so)
+ @USE_LHAPDF_FALSE@LHAPDFCFLAGS = 
+ @USE_LHAPDF_TRUE@LHAPDFCFLAGS = $(shell lhapdf-config --cxxflags)
+-AM_CXXFLAGS = $(ROOTARCH) -O3 -DDATADIR=\"@datadir@/$(PACKAGE)\" -Wall -Wextra -fPIC  -I. -I.. -I$(srcdir) $(LHAPDFCXXFLAGS) $(ROOTCFLAGS)  $(HOPPETCFLAGS) -fPIC
+-AM_LDFLAGS = $(ROOTARCH) -O3  $(ROOTLIBS) $(FCLIBS) $(HOPPETLIBS) $(FRTLLIB)  
++AM_CXXFLAGS = $(ROOTARCH) -O2 -DDATADIR=\"@datadir@/$(PACKAGE)\" -Wall -Wextra -fPIC  -I. -I.. -I$(srcdir) $(LHAPDFCXXFLAGS) $(ROOTCFLAGS)  $(HOPPETCFLAGS) -fPIC
++AM_LDFLAGS = $(ROOTARCH) -O2  $(ROOTLIBS) $(FCLIBS) $(HOPPETLIBS) $(FRTLLIB)  
+ applgrid_combine_SOURCES = combine.cxx
+ applgrid_combine_LDADD = libAPPLgrid.la
+ applgrid_combine_CXXFLAGS = $(AM_CXXFLAGS) 
+-- 
+2.47.1
+

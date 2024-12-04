@@ -1,6 +1,6 @@
 #! /usr/bin/bash
 
-FFLAGS="-std=legacy" ./configure --prefix=${PREFIX}
+FFLAGS="-std=legacy" ./configure --enable-no-undefined --prefix=${PREFIX}
 make clean
 
 make -j$(nproc)

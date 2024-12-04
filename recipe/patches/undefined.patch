@@ -1,0 +1,21 @@
+diff --git a/configure.ac b/configure.ac
+index baa70e7..145547c 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -45,6 +45,13 @@ AC_SEARCH_LIBS( gzopen, z )
+ # AC_MSG_NOTICE([ZLIBTEST is set to $ZLIBTEST])
+ # AM_CONDITIONAL(HAVE_LIBZ, test "x$ZLIBTEST" != "x")
+ 
++# Define optional feature with AC_ARG_ENABLE
++AC_ARG_ENABLE([no-undefined],
++    [AS_HELP_STRING([--enable-no-undefined], [Enable -Wl,--no-undefined linker flag])],
++    [if test "x$enable_no_undefined" = "xyes"; then
++        LDFLAGS="$LDFLAGS -Wl,--no-undefined"
++    fi]
++)
+ 
+ AC_ARG_WITH([root],
+             [AS_HELP_STRING([--without-root],[disable support for root])],
+-- 
+2.43.0
+

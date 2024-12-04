@@ -17,25 +17,33 @@ source:
   {% endif %}
   patches:
     - patches/cstdint.patch
+    - patches/iterator.patch
+    - patches/undefined.patch
+#    - patches/O2.patch
 
 requirements:
   build:
     - {{ compiler('gfortran') }}   # GNU Fortran compiler
     - {{ compiler('c') }}          # GNU C compiler
     - {{ compiler('cxx') }}        # GNU C++ compiler
-    
+
     - cmake                        # Build system
     - make                         # Make utility
+    - libtool==2.4.6
+    - autoconf
+    - automake
 
   host:
     - hoppet
-    - root
     - lhapdf>=6
+    - zlib
+#    - root
 
   run:
     - hoppet
-    - root
     - lhapdf>=6
+    - zlib
+#    - root
 
 test:
   commands:

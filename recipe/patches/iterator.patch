@@ -1,0 +1,15 @@
+diff --git a/src/combine.cxx b/src/combine.cxx
+index bff802a..2891abc 100644
+--- a/src/combine.cxx
++++ b/src/combine.cxx
+@@ -24,6 +24,7 @@
+ #include <sys/stat.h>
+ 
+ #include <algorithm>
++#include <iterator>
+ 
+ #include <regex>
+ #include <map>
+-- 
+2.43.0
+
