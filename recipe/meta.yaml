@@ -35,12 +35,14 @@ requirements:
 
   host:
     - hoppet
+    - fastnlo
     - lhapdf>=6
     - zlib
     - root
 
   run:
     - hoppet
+    - fastnlo
     - lhapdf>=6
     - zlib
     - root
