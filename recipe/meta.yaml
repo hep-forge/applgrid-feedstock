@@ -18,7 +18,7 @@ source:
   patches:
     - patches/cstdint.patch
     - patches/iterator.patch
-    - patches/undefined.patch
+#    - patches/undefined.patch
 
 requirements:
   build:
@@ -31,21 +31,21 @@ requirements:
     - libtool
     - autoconf
     - automake
-    - root
+    - root<6.34
 
   host:
     - hoppet
     - fastnlo
     - lhapdf>=6
     - zlib
-    - root
+    - root<6.34
 
   run:
     - hoppet
     - fastnlo
     - lhapdf>=6
     - zlib
-    - root
+    - root<6.34
 
 test:
   commands:
