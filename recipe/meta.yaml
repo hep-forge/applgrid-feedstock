@@ -18,7 +18,7 @@ source:
   patches:
     - patches/cstdint.patch
     - patches/iterator.patch
-#    - patches/undefined.patch
+    - patches/undefined.patch
 
 requirements:
   build:
