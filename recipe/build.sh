@@ -1,14 +1,6 @@
 #! /usr/bin/bash
 
-
-libtoolize
-autoheader
-
-aclocal
-autoconf
-automake --add-missing
-
-FFLAGS="-std=legacy" ./configure --enable-no-undefined --prefix=${PREFIX}
+FFLAGS="-std=legacy" ./configure --prefix=${PREFIX}
 make clean
 
 make -j$(nproc)
