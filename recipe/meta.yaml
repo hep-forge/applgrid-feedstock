@@ -1,5 +1,5 @@
 {% set versions = {
-    "1.6.27": "87e64d1a3df7148c20e1f382c9f189ad428cdaf0c3425efa25c2e1b5ba003ad7"
+    "1.6.36": "2dc23844671284b4cf9f4b69f317ef68a1530b4b1fb093a31395b35aac9fcf1c"
 } %}
 
 {% set version = environ.get('COMMIT_VERSION', None) %}
@@ -19,7 +19,6 @@ source:
     - patches/cstdint.patch
     - patches/iterator.patch
     - patches/undefined.patch
-#    - patches/O2.patch
 
 requirements:
   build:
@@ -29,21 +28,21 @@ requirements:
 
     - cmake                        # Build system
     - make                         # Make utility
-    - libtool==2.4.6
+    - libtool
     - autoconf
     - automake
+    - root
 
   host:
     - hoppet
     - lhapdf>=6
     - zlib
-#    - root
+    - root
 
   run:
     - hoppet
     - lhapdf>=6
-    - zlib
-#    - root
+    - root
 
 test:
   commands:
