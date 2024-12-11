@@ -1,5 +1,11 @@
 #! /usr/bin/bash
 
+libtoolize
+autoheader
+aclocal
+autoconf
+automake --add-missing
+
 FFLAGS="-std=legacy" ./configure --prefix=${PREFIX}
 make clean
 
