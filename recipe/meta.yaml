@@ -31,21 +31,21 @@ requirements:
     - libtool
     - autoconf
     - automake
-    - root<6.34
+    - root
 
   host:
     - hoppet
     - fastnlo
     - lhapdf>=6
     - zlib
-    - root<6.34
+    - root
 
   run:
     - hoppet
     - fastnlo
     - lhapdf>=6
     - zlib
-    - root<6.34
+    - root
 
 test:
   commands:
