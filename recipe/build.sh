@@ -13,3 +13,4 @@ make -j$(nproc)
 make install
 
 cp src/*.h $PREFIX/include/appl_grid
+ln -sf ./appl_grid/* $PREFIX/include
