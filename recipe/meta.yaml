@@ -32,21 +32,21 @@ requirements:
     - libtool
     - autoconf
     - automake
-    - root
+    - root=6.32
 
   host:
     - hoppet
     - fastnlo
     - lhapdf>=6
     - zlib
-    - root
+    - root=6.32
 
   run:
     - hoppet
     - fastnlo
     - lhapdf>=6
     - zlib
-    - root
+    - root=6.32
 
 test:
   commands:
