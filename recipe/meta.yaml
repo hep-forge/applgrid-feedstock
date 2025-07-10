@@ -11,6 +11,13 @@ package:
   name: {{ environ.get('ANACONDA_PACKAGE', "applgrid")|string|lower }}
   version: {{ environ.get('ANACONDA_VERSION', version)|replace('/', '.')|replace('-', '.') }}
 
+build:
+  number: 0
+  string: "root{{ root.replace('.', '') }}"
+  ignore_run_exports_from:
+    - tbb
+    - tbb-devel
+
 source:
   url: "https://applgrid.hepforge.org/downloads/applgrid-{{ version }}.tgz"
   {% if versions.get(version, None) %}
@@ -32,21 +39,20 @@ requirements:
     - libtool
     - autoconf
     - automake
-    - root
 
   host:
     - hoppet
     - fastnlo
-    - lhapdf>=6
+    - lhapdf>5
     - zlib
-    - root
+    - {{ pin_compatible('root', max_pin='x.x') }}
 
   run:
     - hoppet
     - fastnlo
-    - lhapdf>=6
+    - lhapdf>5
     - zlib
-    - root
+    - {{ pin_compatible('root', max_pin='x.x') }}
 
 test:
   commands:
