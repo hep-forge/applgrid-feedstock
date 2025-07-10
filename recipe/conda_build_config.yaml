@@ -9,10 +9,5 @@ root:
   - 6.32
   - 6.34
 
-libtorch:
-  - 2.6.0
-  - 2.7.0
-
 zip_keys:
-  - libtorch
   - root
