@@ -9,7 +9,7 @@ forge:
 	@conda install -c conda-forge -y conda-smithy conda-verify conda-package-handling anaconda-client
 
 render:
-	@conda smithy rerender --no-check-uptodate
+	@conda render recipe/ -e recipe/conda_build_config.yaml
 	@echo "!Makefile" >> .gitignore
 	@echo "!.github/**"  >> .gitignore
 	@git add .gitignore
@@ -28,4 +28,4 @@ anaconda:
         done
 
 debug:
-	@conda debug -c hep-forge -c conda-forge -c defaults .
+	@conda debug -c hep-forge -c conda-forge -c defaults -e recipe/conda_build_config.yaml .
