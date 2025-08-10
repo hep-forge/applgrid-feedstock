@@ -44,7 +44,7 @@ requirements:
     - automake
 
   host:
-    - libstdcxx-ng{{gnu_build_pin}}
+    - libstdcxx-ng{{gnu_host_pin}}
     - hoppet
     - fastnlo
     - lhapdf>5
