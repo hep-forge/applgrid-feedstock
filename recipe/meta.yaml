@@ -7,9 +7,6 @@
 {% set version = version or versions.keys()|first %}
 {% set version = version|string %}
 
-{% set gnu_build_pin = " 14.*" %}
-{% set gnu_host_pin   = " >=14" %}
-
 package:
   name: {{ environ.get('ANACONDA_PACKAGE', "applgrid")|string|lower }}
   version: {{ environ.get('ANACONDA_VERSION', version)|replace('/', '.')|replace('-', '.') }}
@@ -33,9 +30,9 @@ source:
 
 requirements:
   build:
-    - {{ compiler('gfortran') }}{{ gnu_build_pin }}   # GNU Fortran compiler
-    - {{ compiler('c') }}{{ gnu_build_pin }}          # GNU C compiler
-    - {{ compiler('cxx') }}{{ gnu_build_pin }}        # GNU C++ compiler
+    - {{ compiler('gfortran') }}   # GNU Fortran compiler
+    - {{ compiler('c') }}          # GNU C compiler
+    - {{ compiler('cxx') }}        # GNU C++ compiler
 
     - cmake                        # Build system
     - make                         # Make utility
@@ -44,19 +41,18 @@ requirements:
     - automake
 
   host:
-    - libstdcxx-ng{{gnu_host_pin}}
     - hoppet
     - fastnlo
     - lhapdf>5
     - zlib
-    - {{ pin_compatible('root', max_pin='x.x') }}
+    - root
 
   run:
     - hoppet
     - fastnlo
     - lhapdf>5
     - zlib
-    - {{ pin_compatible('root', max_pin='x.x') }}
+    - root
 
 test:
   commands:
