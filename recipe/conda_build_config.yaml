@@ -8,5 +8,5 @@ c_stdlib_version:              # [unix]
 root:
   - 6.32
 
-zip_keys:
+packages:
   - root
