@@ -14,9 +14,6 @@ package:
 build:
   number: 0
   string: "root{{ root.replace('.', '') }}"
-  ignore_run_exports_from:
-    - tbb
-    - tbb-devel
 
 source:
   url: "https://applgrid.hepforge.org/downloads/applgrid-{{ version }}.tgz"
