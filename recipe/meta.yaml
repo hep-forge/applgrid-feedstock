@@ -38,18 +38,18 @@ requirements:
     - automake
 
   host:
+    - root
     - hoppet
     - fastnlo
     - lhapdf>5
     - zlib
-    - root
 
   run:
+    - root
     - hoppet
     - fastnlo
     - lhapdf>5
     - zlib
-    - root
 
 test:
   commands:
