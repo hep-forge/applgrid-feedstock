@@ -53,7 +53,7 @@ requirements:
 
 test:
   requires:
-    - root
+    - root =={{ root }}
   commands:
     - echo "Running.. $(which applgrid-convert)"
     - applgrid-convert
