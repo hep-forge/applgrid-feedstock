@@ -38,20 +38,22 @@ requirements:
     - automake
 
   host:
-    - root=={{ root }}
+    - root
     - hoppet
     - fastnlo
     - lhapdf>5
     - zlib
 
   run:
-    - root=={{ root }}
+    - root
     - hoppet
     - fastnlo
     - lhapdf>5
     - zlib
 
 test:
+  requires:
+    - root
   commands:
     - echo "Running.. $(which applgrid-convert)"
     - applgrid-convert
