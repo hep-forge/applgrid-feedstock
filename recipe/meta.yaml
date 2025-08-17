@@ -41,16 +41,12 @@ requirements:
     - zlib
 
   run:
-    # - root {{ root }}.*
     - hoppet
     - fastnlo * root{{ root.replace('.', '') }}
     - lhapdf>5
     - zlib
 
 test:
-  # requires:
-    # - root {{ root }}.*
-    # - fastnlo * root{{ root.replace('.', '') }}
   commands:
     - echo "Running.. $(which applgrid-convert)"
     - applgrid-convert
