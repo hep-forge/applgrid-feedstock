@@ -35,16 +35,15 @@ requirements:
     - automake
 
   host:
-    # - root {{ root }}.*
     - hoppet
-    - fastnlo #* root{{ root.replace('.', '') }}
+    - fastnlo * root{{ root.replace('.', '') }}
     - lhapdf>5
     - zlib
 
   run:
     # - root {{ root }}.*
     - hoppet
-    - fastnlo #* root{{ root.replace('.', '') }}
+    - fastnlo * root{{ root.replace('.', '') }}
     - lhapdf>5
     - zlib
 
