@@ -10,10 +10,11 @@
 package:
   name: {{ environ.get('ANACONDA_PACKAGE', "applgrid")|string|lower }}
   version: {{ environ.get('ANACONDA_VERSION', version)|replace('/', '.')|replace('-', '.') }}
+{% set root_tag = (root or '')|replace('.', '') %}
 
 build:
   number: 0
-  string: "root{{ root.replace('.', '') }}"
+  string: "root{{ root_tag }}"
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x.x") }}
 
@@ -38,13 +39,13 @@ requirements:
 
   host:
     - hoppet
-    - fastnlo * root{{ root.replace('.', '') }}
+    - fastnlo * root{{ root_tag }}
     - lhapdf>5
     - zlib
 
   run:
     - hoppet
-    - fastnlo * root{{ root.replace('.', '') }}
+    - fastnlo * root{{ root_tag }}
     - lhapdf>5
     - zlib
 
