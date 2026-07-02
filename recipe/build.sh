@@ -16,7 +16,8 @@ automake --add-missing
 FFLAGS="-std=legacy" ./configure --prefix=${PREFIX}
 make clean
 
-make -j$(nproc)
+NPROC=$(nproc 2>/dev/null || sysctl -n hw.ncpu)
+make -j$NPROC
 make install
 
 cp src/*.h $PREFIX/include/appl_grid
