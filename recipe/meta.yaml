@@ -29,6 +29,7 @@ source:
     - patches/cstdint.patch
     - patches/iterator.patch
     - patches/undefined.patch
+    - patches/no-m64-on-aarch64.patch
 
 requirements:
   build:

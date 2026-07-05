@@ -1,0 +1,13 @@
+--- a/configure.ac
++++ b/configure.ac
+@@ -106,7 +106,9 @@
+     AC_MSG_WARN([****************************************************************])
+ fi
+ 
+-( echo $CXXFLAGS | grep -q "m64" ) || CXXFLAGS+=" -m64 " 
++case "$(uname -m)" in
++  x86_64) ( echo $CXXFLAGS | grep -q "m64" ) || CXXFLAGS+=" -m64 " ;;
++esac
+ 
+ 
+ AC_SUBST(ROOT_LDFLAGS)
