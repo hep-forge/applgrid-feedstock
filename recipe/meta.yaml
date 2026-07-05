@@ -40,13 +40,13 @@ requirements:
     - automake
 
   host:
-    - hoppet
+    - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastnlo * root{{ root_tag }}
     - lhapdf>5
     - zlib
 
   run:
-    - hoppet
+    - hoppet ==1.2.0            # needs the pre-2.0 hoppet_v1.h/libhoppet_v1.a API
     - fastnlo * root{{ root_tag }}
     - lhapdf>5
     - zlib
