@@ -16,9 +16,10 @@ c_stdlib_version:              # [unix]
 
 # 6.36 dropped: 6.36.04 was only ever published for linux-64 (no
 # linux-aarch64 build), so this variant slot was unconditionally
-# unsatisfiable on arm64.
+# unsatisfiable on arm64. 6.34 dropped in turn: fastnlo (this chain's
+# other dependency) now also publishes against root638 on both arches.
 root:
-  - 6.34
+  - 6.38
 
 packages:
   - root
