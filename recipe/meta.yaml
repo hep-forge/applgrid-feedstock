@@ -17,6 +17,14 @@ package:
 build:
   number: 0
   string: "root{{ root_tag }}"
+  # --with-root defaults on and src/Makefile.am's rootcint rule installs
+  # a precompiled ROOT dictionary cache (lib/*.pcm). conda-build's
+  # default prefix-relocation does a naive text substitution on every
+  # installed file it doesn't know to skip, which corrupts that binary
+  # format. Same fix as root-feedstock/root-plus-feedstock use for the
+  # identical artifact.
+  ignore_prefix_files:
+    - lib/*.pcm
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x.x") }}
 
