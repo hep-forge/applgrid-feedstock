@@ -15,8 +15,8 @@ The APPLgrid project provides a fast and flexible way to reproduce the results o
 
 | Architecture | Latest published |
 |--------------|------------------|
-| linux-amd64 (`linux-64`) | ✅ `1.6.35` |
-| linux-arm64 (`linux-aarch64`) | ✅ `1.6.35` |
+| linux-amd64 (`linux-64`) | ✅ `1.6.49` |
+| linux-arm64 (`linux-aarch64`) | ✅ `1.6.49` |
 
 _As of the last feedstock render; the badges above are live._
 
