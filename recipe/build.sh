@@ -18,6 +18,12 @@ if [[ "$(uname)" == "Darwin" ]]; then
              -e 's/gfortran --print-file-name=libgfortran\.a/${FC} --print-file-name=libgfortran.a/' configure.ac
   rm -f configure.ac.bak
   grep -qF '${FC} --print-file-name=libgfortran.dylib' configure.ac
+  # src/Makefile.am builds its own FRTLLIB the same way, with a bare
+  # `gfortran` at make time. libgfortran.dylib is in $PREFIX/lib, which
+  # conda's LDFLAGS already search: -lgfortran is enough.
+  sed -i.bak 's/^    FRTLLIB  = -L\$(subst .*$/    FRTLLIB  = -lgfortran/' src/Makefile.am
+  rm -f src/Makefile.am.bak
+  if grep -q 'FRTLLIB  = -L' src/Makefile.am; then echo "FRTLLIB not replaced" >&2; exit 1; fi
 fi
 
 libtoolize
