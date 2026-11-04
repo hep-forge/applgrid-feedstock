@@ -7,6 +7,19 @@ cd build-scripts
 cmake $RECIPE_DIR/scripts
 cd ..
 
+# configure.ac finds libgfortran with a bare `gfortran` and looks for
+# libgfortran.so. On macOS conda's gfortran is only target-prefixed and the
+# library is libgfortran.dylib: FRTLLIB came out as "-L -lgfortran" and
+# libtool refused it. Ask conda's $FC for the .dylib (configure.ac is
+# regenerated below).
+if [[ "$(uname)" == "Darwin" ]]; then
+  sed -i.bak -e 's/gfortran --print-file-name=libgfortran\.so/${FC} --print-file-name=libgfortran.dylib/' \
+             -e "s/sed 's|libgfortran\.so||'/sed 's|libgfortran.dylib||'/" \
+             -e 's/gfortran --print-file-name=libgfortran\.a/${FC} --print-file-name=libgfortran.a/' configure.ac
+  rm -f configure.ac.bak
+  grep -qF '${FC} --print-file-name=libgfortran.dylib' configure.ac
+fi
+
 libtoolize
 autoheader
 aclocal
